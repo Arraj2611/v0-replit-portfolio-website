@@ -11,9 +11,8 @@ export default function Hero() {
   const resumeUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/main/public/resume/RajeevAken.pdf"
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--hero-gradient-from))] to-[hsl(var(--hero-gradient-to))]"></div>
         <ParticleBackground />
       </div>
 
