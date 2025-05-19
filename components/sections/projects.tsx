@@ -23,7 +23,7 @@ const projects = [
     title: "DocRAG",
     description:
       "Intelligent Document Q&A Chatbot using Retrieval-Augmented Generation (RAG). Upload documents (PDFs, DOCX, images) and DocRAG processes them, enabling you to chat directly about their content using state-of-the-art language models and vector databases.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/docrag-demo.jpg",
     tags: ["Python", "React", "FastAPI", "Langchain", "FAISS", "Groq", "Vector Database"],
     github: "https://github.com/Arraj2611/doc_RAG",
     demo: "https://doc-rag-delta.vercel.app",
