@@ -77,7 +77,7 @@ export default function ParticleBackground() {
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         ctx.fillStyle = particle.color
-        ctx.globalAlpha = resolvedTheme === "dark" ? 0.5 : 0.6;
+        ctx.globalAlpha = resolvedTheme === "dark" ? 0.7 : 0.8;
         ctx.fill()
 
         // Update position
@@ -113,7 +113,7 @@ export default function ParticleBackground() {
           if (distance < maxDistance) {
             ctx.beginPath()
             ctx.strokeStyle = connectionColor;
-            ctx.globalAlpha = (resolvedTheme === "dark" ? 0.08 : 0.12) * (1 - distance / maxDistance)
+            ctx.globalAlpha = (resolvedTheme === "dark" ? 0.25 : 0.3) * (1 - distance / maxDistance)
             ctx.lineWidth = 0.3
             ctx.moveTo(particles.current[i].x, particles.current[i].y)
             ctx.lineTo(particles.current[j].x, particles.current[j].y)
@@ -138,5 +138,5 @@ export default function ParticleBackground() {
     }
   }, [resolvedTheme, particleBaseColor])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-50 dark:opacity-40" />
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-70 dark:opacity-60" />
 }
