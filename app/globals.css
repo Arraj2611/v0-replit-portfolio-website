@@ -4,93 +4,108 @@
 
 @layer base {
   :root {
-    --background: 220 20% 98%;
-    /* Light Background - Softer White */
-    --foreground: 220 15% 20%;
-    /* Light Foreground - Dark Gray */
+    --background: 0 0% 100%;
+    /* Pure White */
+    --foreground: 224 71% 4%;
+    /* Dark Blue-Black for text */
     --card: 0 0% 100%;
-    /* Card Background - White */
-    --card-foreground: 220 15% 25%;
-    /* Card Foreground - Slightly Darker Gray */
+    /* White card background */
+    --card-foreground: 224 71% 4%;
+    /* Dark Blue-Black for card text */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
-    --primary: 221.2 83.2% 53.3%;
-    /* Primary Blue - Keep vibrant */
-    --primary-foreground: 210 40% 98%;
-    /* Text on Primary - White */
-    --secondary: 215 30% 95%;
-    /* Secondary - Light Gray */
-    --secondary-foreground: 220 10% 40%;
-    /* Text on Secondary - Medium Gray */
-    --muted: 215 30% 96%;
-    /* Muted Background - Very Light Gray */
-    --muted-foreground: 215 20% 55%;
-    /* Muted Text - Lighter Gray */
+    --popover-foreground: 224 71% 4%;
+    --primary: 217.2 91.2% 59.8%;
+    /* Vibrant Blue */
+    --primary-foreground: 0 0% 100%;
+    /* White text on primary */
+    --secondary: 220 14.3% 95.9%;
+    /* Light Gray */
+    --secondary-foreground: 220 13% 20%;
+    /* Darker Gray for text on secondary */
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    /* Softer Gray for muted text */
     --accent: 217.2 91.2% 59.8%;
-    /* Accent - Keep vibrant (can adjust if needed) */
-    --accent-foreground: 210 40% 98%;
-    /* Text on Accent - White */
-    --destructive: 0 70% 50%;
-    /* Destructive - Red */
+    /* Same as primary or a distinct accent color */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    /* Bright Red */
     --destructive-foreground: 0 0% 100%;
-    /* Text on Destructive - White */
-    --border: 215 25% 90%;
-    /* Border - Light Gray */
-    --input: 215 25% 88%;
-    /* Input Background - Slightly Darker Light Gray */
-    --ring: 221.2 83.2% 53.3%;
-    /* Ring - Primary Blue */
+    --border: 220 13% 91%;
+    /* Light Gray border */
+    --input: 220 13% 91%;
+    /* Light Gray input background */
+    --ring: 217.2 91.2% 59.8%;
+    /* Primary color for rings */
     --radius: 0.5rem;
-    --teal: 175 80% 40%;
-    /* Teal - Adjusted for light theme contrast */
-    --violet: 260 70% 55%;
-    /* Violet - Adjusted for light theme contrast */
+
+    /* Colors for neon effects - adjust for light theme visibility if needed */
+    /* Keeping them vibrant as they define the neon look */
+    --teal: 160 100% 35%;
+    /* Darker Teal for better contrast on light bg */
+    --violet: 260 85% 60%;
+    /* Vibrant Violet */
 
     /* Custom for portfolio */
-    --nav-bg: 220 20% 98% / 0.8;
-    /* Light nav with some transparency */
-    --hero-gradient-from: 220 20% 95% / 0.7;
-    /* Lighter gradient for hero */
-    --hero-gradient-to: 210 30% 90% / 0.9;
+    --nav-bg-light: 0 0% 100% / 0.8;
+    /* Semi-transparent white for nav */
+    --hero-gradient-from-light: 0 0% 100%;
+    /* White */
+    --hero-gradient-to-light: 220 14.3% 95.9%;
+    /* Light Gray */
+    --particle-color-light: "#60a5fa";
+    /* Light Blue for particles */
+
+    /* Default to light theme variables if .dark is not present */
+    --nav-bg: var(--nav-bg-light);
+    --hero-gradient-from: var(--hero-gradient-from-light);
+    --hero-gradient-to: var(--hero-gradient-to-light);
+    --particle-color: var(--particle-color-light);
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
-    /* Dark Background - Original */
     --foreground: 210 40% 98%;
-    /* Dark Foreground - Original */
-    --card: 224 71% 4%;
-    /* Dark Card - Slightly different from background */
+    --card: 222.2 84% 4.9%;
+    /* Adjusted to match background for unified dark feel */
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
     --primary: 217.2 91.2% 59.8%;
-    /* Primary Blue - Dark theme */
     --primary-foreground: 222.2 47.4% 11.2%;
-    /* Text on Primary - Dark */
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 22.5%;
-    /* Muted Background - Darker */
+    --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 91.2% 59.8%;
+    --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
-    --teal: 180 100% 50%;
-    /* Teal - Original */
-    --violet: 270 76% 58%;
-    /* Violet - Original */
 
-    /* Custom for portfolio */
-    --nav-bg: 222.2 84% 4.9% / 0.8;
-    /* Dark nav with some transparency */
-    --hero-gradient-from: 10 80% 3% / 0.5;
-    /* Darker hero gradient */
-    --hero-gradient-to: 20 70% 5% / 0.9;
+    /* Neon colors for dark theme */
+    --teal: 180 100% 50%;
+    /* Original vibrant teal */
+    --violet: 270 76% 58%;
+    /* Original vibrant violet */
+
+    /* Custom for portfolio - dark theme */
+    --nav-bg-dark: 222.2 84% 4.9% / 0.7;
+    /* Semi-transparent dark for nav */
+    --hero-gradient-from-dark: 222 47% 11% / 0.5;
+    /* Original navy with opacity */
+    --hero-gradient-to-dark: 240 5% 11% / 0.9;
+    /* Original charcoal with opacity */
+    --particle-color-dark: "#ffffff";
+    /* White for particles */
+
+    /* Override with dark theme variables */
+    --nav-bg: var(--nav-bg-dark);
+    --hero-gradient-from: var(--hero-gradient-from-dark);
+    --hero-gradient-to: var(--hero-gradient-to-dark);
+    --particle-color: var(--particle-color-dark);
   }
 }
 
