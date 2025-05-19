@@ -77,7 +77,7 @@ export default function About() {
               <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-white/20 bg-background">
                 {/* Use a simple img tag with error handling */}
                 <img
-                  src="/profile.png"
+                  src="/images/profile.png"
                   alt="Rajeev Aken"
                   className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
