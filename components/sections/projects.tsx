@@ -12,7 +12,7 @@ const projects = [
     title: "BitPredict",
     description:
       "Industry-Grade Bitcoin Price Prediction System that ingests, transforms, and version-controls data (including market and sentiment data), builds and tracks machine learning models for Bitcoin price prediction, and deploys an API served via a scalable, monitored infrastructure.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/BitPredict.png",
     tags: ["Python", "TensorFlow", "LSTM", "FastAPI", "Streamlit", "Apache Airflow", "Docker"],
     github: "https://github.com/Arraj2611/bitpredict",
     demo: "#",
@@ -23,7 +23,7 @@ const projects = [
     title: "DocRAG",
     description:
       "Intelligent Document Q&A Chatbot using Retrieval-Augmented Generation (RAG). Upload documents (PDFs, DOCX, images) and DocRAG processes them, enabling you to chat directly about their content using state-of-the-art language models and vector databases.",
-    image: "/images/docrag-demo.jpg",
+    image: "/images/docragimg.png",
     tags: ["Python", "React", "FastAPI", "Langchain", "FAISS", "Groq", "Vector Database"],
     github: "https://github.com/Arraj2611/doc_RAG",
     demo: "https://doc-rag-delta.vercel.app",
@@ -34,7 +34,7 @@ const projects = [
     title: "SIH Sentiment Analysis",
     description:
       "End-to-end ML project developed for Smart India Hackathon 2023. Performs sentiment analysis of helpdesk calls using TensorFlow and LSTM models to provide actionable insights for customer service improvement.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/SIH.png",
     tags: ["NLP", "Python", "TensorFlow", "LSTM"],
     github: "https://github.com/Arraj2611/SIH_repo",
     demo: "#",
@@ -92,7 +92,7 @@ function ProjectCard({ project }) {
           <img
             src={project.image || "/placeholder.svg"}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
           />
         </div>
         <CardHeader className="pb-4">
