@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { useTheme } from "@/components/theme-provider"
+import { useTheme } from "next-themes"
 
 interface Particle {
   x: number
