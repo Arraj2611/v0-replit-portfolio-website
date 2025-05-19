@@ -20,7 +20,7 @@ export default function Footer() {
               href="https://github.com/Arraj2611"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
@@ -29,14 +29,14 @@ export default function Footer() {
               href="https://linkedin.com/in/rajeevaken"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:rajeevaken03@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
@@ -45,7 +45,7 @@ export default function Footer() {
               href="https://arraj2611.streamlit.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
               aria-label="Website"
             >
               <Globe className="h-5 w-5" />

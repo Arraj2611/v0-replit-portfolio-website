@@ -8,12 +8,12 @@ import Link from "next/link"
 
 export default function Hero() {
   // Using the raw GitHub URL for your resume with the cleaner filename
-  const resumeUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/main/RajeevAken.pdf"
+  const resumeUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/blob/main/public/resume/RajeevAken.pdf"
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/50 to-charcoal/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--hero-gradient-from))] to-[hsl(var(--hero-gradient-to))]"></div>
         <ParticleBackground />
       </div>
 
@@ -79,8 +79,8 @@ export default function Hero() {
             repeatDelay: 0.2,
           }}
         >
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white rounded-full mt-2 animate-bounce"></div>
+          <div className="w-6 h-10 border-2 border-foreground/50 rounded-full flex justify-center">
+            <div className="w-1 h-2 bg-foreground/50 rounded-full mt-2 animate-bounce"></div>
           </div>
         </motion.div>
       </motion.div>

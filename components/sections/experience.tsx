@@ -68,8 +68,8 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <div className="bg-card rounded-lg p-6 border border-border flex-grow">
-                  <h3 className="text-xl font-semibold">{exp.role}</h3>
+                <div className="bg-card rounded-lg p-6 border border-border flex-grow shadow-md">
+                  <h3 className="text-xl font-semibold text-card-foreground">{exp.role}</h3>
                   <p className="text-lg text-muted-foreground">{exp.company}</p>
 
                   <div className="flex items-center mt-2 text-sm text-muted-foreground">
@@ -77,15 +77,15 @@ export default function Experience() {
                     <span>{exp.period}</span>
                   </div>
 
-                  <p className="mt-4">{exp.description}</p>
+                  <p className="mt-4 text-card-foreground/90">{exp.description}</p>
 
                   <div className="mt-4">
-                    <h4 className="font-medium mb-2">Key Achievements:</h4>
+                    <h4 className="font-medium mb-2 text-card-foreground">Key Achievements:</h4>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start">
-                          <CheckCircle2 className="h-5 w-5 text-teal mr-2 flex-shrink-0 mt-0.5" />
-                          <span>{achievement}</span>
+                          <CheckCircle2 className="h-5 w-5 text-[hsl(var(--teal))] mr-2 flex-shrink-0 mt-0.5" />
+                          <span className="text-card-foreground/90">{achievement}</span>
                         </li>
                       ))}
                     </ul>
