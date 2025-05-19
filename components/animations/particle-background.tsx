@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useTheme } from "@/components/theme-provider"
 
 interface Particle {
   x: number
@@ -15,6 +16,7 @@ export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particles = useRef<Particle[]>([])
   const animationFrameId = useRef<number>()
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -22,6 +24,12 @@ export default function ParticleBackground() {
 
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
+    const particleColors = resolvedTheme === "dark" 
+      ? ["#00f0ff", "#9d4edd", "#ffffff"]
+      : ["#1e3a8a", "#4c1d95", "#374151"];
+    
+    const connectionColor = resolvedTheme === "dark" ? "#ffffff" : "#4b5563";
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
@@ -46,8 +54,7 @@ export default function ParticleBackground() {
     }
 
     const getRandomColor = () => {
-      const colors = ["#00f0ff", "#9d4edd", "#ffffff"]
-      return colors[Math.floor(Math.random() * colors.length)]
+      return particleColors[Math.floor(Math.random() * particleColors.length)]
     }
 
     const drawParticles = () => {
@@ -57,7 +64,7 @@ export default function ParticleBackground() {
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         ctx.fillStyle = particle.color
-        ctx.globalAlpha = 0.6
+        ctx.globalAlpha = resolvedTheme === "dark" ? 0.6 : 0.7;
         ctx.fill()
 
         // Update position
@@ -91,8 +98,8 @@ export default function ParticleBackground() {
 
           if (distance < maxDistance) {
             ctx.beginPath()
-            ctx.strokeStyle = "#ffffff"
-            ctx.globalAlpha = 0.1 * (1 - distance / maxDistance)
+            ctx.strokeStyle = connectionColor;
+            ctx.globalAlpha = (resolvedTheme === "dark" ? 0.1 : 0.15) * (1 - distance / maxDistance)
             ctx.lineWidth = 0.5
             ctx.moveTo(particles.current[i].x, particles.current[i].y)
             ctx.lineTo(particles.current[j].x, particles.current[j].y)
@@ -113,7 +120,7 @@ export default function ParticleBackground() {
         cancelAnimationFrame(animationFrameId.current)
       }
     }
-  }, [])
+  }, [resolvedTheme])
 
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-40" />
 }

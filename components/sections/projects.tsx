@@ -12,7 +12,7 @@ const projects = [
     title: "BitPredict",
     description:
       "Industry-Grade Bitcoin Price Prediction System that ingests, transforms, and version-controls data (including market and sentiment data), builds and tracks machine learning models for Bitcoin price prediction, and deploys an API served via a scalable, monitored infrastructure.",
-    image: "/images/BitPredict.png",
+    image: "/placeholder.svg?height=400&width=600",
     tags: ["Python", "TensorFlow", "LSTM", "FastAPI", "Streamlit", "Apache Airflow", "Docker"],
     github: "https://github.com/Arraj2611/bitpredict",
     demo: "#",
@@ -23,7 +23,7 @@ const projects = [
     title: "DocRAG",
     description:
       "Intelligent Document Q&A Chatbot using Retrieval-Augmented Generation (RAG). Upload documents (PDFs, DOCX, images) and DocRAG processes them, enabling you to chat directly about their content using state-of-the-art language models and vector databases.",
-    image: "/images/docragimg.png",
+    image: "/images/docrag-demo.jpg",
     tags: ["Python", "React", "FastAPI", "Langchain", "FAISS", "Groq", "Vector Database"],
     github: "https://github.com/Arraj2611/doc_RAG",
     demo: "https://doc-rag-delta.vercel.app",
@@ -34,7 +34,7 @@ const projects = [
     title: "SIH Sentiment Analysis",
     description:
       "End-to-end ML project developed for Smart India Hackathon 2023. Performs sentiment analysis of helpdesk calls using TensorFlow and LSTM models to provide actionable insights for customer service improvement.",
-    image: "/images/SIH.png",
+    image: "/placeholder.svg?height=400&width=600",
     tags: ["NLP", "Python", "TensorFlow", "LSTM"],
     github: "https://github.com/Arraj2611/SIH_repo",
     demo: "#",
@@ -87,15 +87,15 @@ export default function Projects() {
 function ProjectCard({ project }) {
   return (
     <HoverAnimation>
-      <Card className="h-full overflow-hidden bg-card">
-        <div className="h-48 overflow-hidden">
+      <Card className="h-full overflow-hidden bg-card flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div className="aspect-[16/9] w-full overflow-hidden bg-muted/30 group">
           <img
             src={project.image || "/placeholder.svg"}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
-        <CardHeader>
+        <CardHeader className="pb-4">
           <div className="flex justify-between items-start">
             <CardTitle>{project.title}</CardTitle>
             {project.status && (
@@ -117,10 +117,10 @@ function ProjectCard({ project }) {
             )}
           </div>
         </CardHeader>
-        <CardContent>
-          <CardDescription className="text-sm text-muted-foreground">{project.description}</CardDescription>
+        <CardContent className="flex-grow pb-4">
+          <CardDescription className="text-sm text-muted-foreground line-clamp-4">{project.description}</CardDescription>
         </CardContent>
-        <CardFooter className="flex justify-between">
+        <CardFooter className="flex justify-between items-center pt-0 pb-4 px-6">
           <Button variant="outline" size="sm" asChild>
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-4 w-4" /> Code
@@ -131,7 +131,7 @@ function ProjectCard({ project }) {
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className={project.demo === "#" ? "cursor-not-available" : ""}
+              className={project.demo === "#" ? "cursor-not-allowed" : ""}
             >
               <ExternalLink className="mr-2 h-4 w-4" /> Demo
             </a>
