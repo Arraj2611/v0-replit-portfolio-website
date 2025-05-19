@@ -73,30 +73,9 @@ export default function About() {
               {/* Outer glow effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-teal to-violet rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 
-              {/* Image container */}
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-white/20 bg-background">
-                {/* Use a simple img tag with error handling */}
-                <img
-                  src="/profile.png"
-                  alt="Rajeev Aken"
-                  className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    // If image fails to load, show initials
-                    e.currentTarget.style.display = "none"
-                    e.currentTarget.parentElement.classList.add(
-                      "flex",
-                      "items-center",
-                      "justify-center",
-                      "bg-gradient-to-br",
-                      "from-primary/20",
-                      "to-primary/40",
-                    )
-                    const initialsDiv = document.createElement("div")
-                    initialsDiv.className = "text-6xl font-bold text-white"
-                    initialsDiv.textContent = "RA"
-                    e.currentTarget.parentElement.appendChild(initialsDiv)
-                  }}
-                />
+              {/* Image container with initials as fallback */}
+              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-white/20 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                <div className="text-6xl font-bold text-white">RA</div>
 
                 {/* Subtle overlay for depth */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>

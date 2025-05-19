@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
+import { useState, useEffect } from "react"
 
 export default function About() {
   const interests = [
@@ -11,6 +12,30 @@ export default function About() {
     { name: "Gaming", icon: "👾" },
     { name: "Movies", icon: "🎬" },
   ]
+
+  // Using the raw GitHub URL for your profile photo
+  const profilePhotoUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/main/photo.png"
+
+  // Fallback image URL
+  const fallbackImageUrl = "/placeholder.svg?height=320&width=320"
+
+  // State to track if the image has loaded successfully
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageSrc, setImageSrc] = useState(profilePhotoUrl)
+
+  // Handle image load error
+  useEffect(() => {
+    const img = new Image()
+    img.src = profilePhotoUrl
+    img.onload = () => {
+      setImageLoaded(true)
+      setImageSrc(profilePhotoUrl)
+    }
+    img.onerror = () => {
+      setImageLoaded(false)
+      setImageSrc(fallbackImageUrl)
+    }
+  }, [profilePhotoUrl])
 
   return (
     <section id="about" className="py-20 bg-background">
@@ -75,26 +100,13 @@ export default function About() {
 
               {/* Image container */}
               <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-white/20 bg-background">
-                {/* Use a simple img tag with error handling */}
+                {/* Use a regular img tag with onError handler */}
                 <img
-                  src="/profile.png"
+                  src={imageSrc || "/placeholder.svg"}
                   alt="Rajeev Aken"
                   className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
-                    // If image fails to load, show initials
-                    e.currentTarget.style.display = "none"
-                    e.currentTarget.parentElement.classList.add(
-                      "flex",
-                      "items-center",
-                      "justify-center",
-                      "bg-gradient-to-br",
-                      "from-primary/20",
-                      "to-primary/40",
-                    )
-                    const initialsDiv = document.createElement("div")
-                    initialsDiv.className = "text-6xl font-bold text-white"
-                    initialsDiv.textContent = "RA"
-                    e.currentTarget.parentElement.appendChild(initialsDiv)
+                    e.currentTarget.src = fallbackImageUrl
                   }}
                 />
 

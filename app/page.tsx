@@ -5,12 +5,9 @@ import Skills from "@/components/sections/skills"
 import Experience from "@/components/sections/experience"
 import Contact from "@/components/sections/contact"
 import EasterEgg from "@/components/easter-egg"
-
-// Add imports for our new components
 import PageTransition from "@/components/animations/page-transition"
 import CursorTrail from "@/components/animations/cursor-trail"
 
-// Wrap the main content with PageTransition and add CursorTrail
 export default function Home() {
   return (
     <PageTransition>
