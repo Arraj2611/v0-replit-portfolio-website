@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export default function Hero() {
   // Using the raw GitHub URL for your resume with the cleaner filename
-  const resumeUrl = "/resume/RajeevAken.pdf"
+  const resumeUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/blob/main/public/resume/RajeevAken.pdf"
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
