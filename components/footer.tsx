@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, Globe } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -12,18 +12,43 @@ export default function Footer() {
             <Link href="#home" className="font-orbitron text-xl font-bold">
               <span className="neon-text">Rajeev Aken</span>
             </Link>
-            <p className="text-sm text-muted-foreground mt-2">AI Engineer & Full Stack Developer</p>
+            <p className="text-sm text-muted-foreground mt-2">AI/ML Engineer & Full Stack Developer</p>
           </div>
 
           <div className="flex space-x-6">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
+            <a
+              href="https://github.com/Arraj2611"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
               <Github className="h-5 w-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+            <a
+              href="https://linkedin.com/in/rajeevaken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+            <a
+              href="mailto:rajeevaken03@gmail.com"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Email"
+            >
               <Mail className="h-5 w-5" />
+            </a>
+            <a
+              href="https://arraj2611.streamlit.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Website"
+            >
+              <Globe className="h-5 w-5" />
             </a>
           </div>
         </div>

@@ -1,39 +1,39 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Database, Server, Cpu, Layers, Terminal } from "lucide-react"
+import { Code, Database, Server, Cpu, Layers, Workflow } from "lucide-react"
 import ScrollAnimation from "../animations/scroll-animation"
 
 const skills = [
   {
-    category: "Languages",
+    category: "Programming Languages",
     icon: <Code className="h-6 w-6" />,
-    items: ["Python", "JavaScript", "TypeScript", "C++", "SQL"],
+    items: ["Python", "SQL", "C++"],
   },
   {
-    category: "Frameworks",
+    category: "Web Technologies",
     icon: <Layers className="h-6 w-6" />,
-    items: ["React", "Next.js", "FastAPI", "Flask", "Express.js"],
+    items: ["FastAPI", "Flask", "Streamlit", "REST APIs"],
   },
   {
     category: "Databases",
     icon: <Database className="h-6 w-6" />,
-    items: ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
+    items: ["Relational Databases", "Data Modeling", "ETL Pipelines"],
   },
   {
-    category: "ML/AI",
+    category: "AI/ML",
     icon: <Cpu className="h-6 w-6" />,
-    items: ["TensorFlow", "PyTorch", "scikit-learn", "LangChain", "FAISS", "Weaviate"],
+    items: ["TensorFlow", "LSTM", "Langchain", "FAISS", "Weaviate", "Groq", "Generative AI", "Vector Search"],
   },
   {
-    category: "DevOps",
+    category: "DevOps & Tools",
     icon: <Server className="h-6 w-6" />,
-    items: ["Docker", "Git", "CI/CD", "AWS", "Vercel"],
+    items: ["Docker", "Git", "AWS", "MLflow", "DVC"],
   },
   {
-    category: "Tools",
-    icon: <Terminal className="h-6 w-6" />,
-    items: ["VS Code", "Jupyter", "Postman", "Figma", "Streamlit"],
+    category: "Data Engineering",
+    icon: <Workflow className="h-6 w-6" />,
+    items: ["Apache Airflow", "AsyncIO", "BeautifulSoup", "Data Pipelines"],
   },
 ]
 

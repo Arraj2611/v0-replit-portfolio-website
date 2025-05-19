@@ -7,14 +7,24 @@ import ScrollAnimation from "../animations/scroll-animation"
 const experiences = [
   {
     id: 1,
-    role: "Data Science Intern",
+    role: "Software Engineering Intern",
     company: "Emergys Solutions Pvt Ltd",
-    period: "May 2023 - July 2023",
-    description: "Worked on data science projects involving SQL, AI models, web scraping, and dashboard development.",
+    period: "Jan 2025 - Present",
+    description: "Working as a Software Engineering Intern at Emergys Solutions in Pune.",
     achievements: [
-      "Developed an automated data scraping solution that increased data collection efficiency by 70%",
-      "Built interactive dashboards for data visualization using Power BI",
-      "Implemented machine learning models for predictive analytics",
+      "Engineered data models and relational databases using SQL for enterprise reporting systems",
+      "Created automated data pipelines using Python, AsyncIO, and BeautifulSoup for ETL tasks",
+    ],
+  },
+  {
+    id: 2,
+    role: "Software Engineering Intern",
+    company: "Shri Sai Tech",
+    period: "Apr 2024 - Jul 2024",
+    description: "Worked as a Software Engineering Intern at Shri Sai Tech in Solapur.",
+    achievements: [
+      "Designed Flask-based APIs to support data-driven microservices and backend communication",
+      "Built AI automation workflows leveraging async calls, optimized for performance and reliability",
     ],
   },
 ]

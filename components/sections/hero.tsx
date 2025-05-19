@@ -4,9 +4,12 @@ import { motion } from "framer-motion"
 import { Download, ArrowRight } from "lucide-react"
 import TypewriterComponent from "typewriter-effect"
 import ParticleBackground from "../animations/particle-background"
-import { AnimatedCharacters } from "../animations/text-animation"
+import Link from "next/link"
 
 export default function Hero() {
+  // Using the raw GitHub URL for your resume with the cleaner filename
+  const resumeUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/main/RajeevAken.pdf"
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -26,7 +29,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Hey, I'm <AnimatedCharacters text="Rajeev" className="neon-text" /> 👋
+          Hey, I'm <span className="neon-text">Rajeev</span> 👋
         </motion.h1>
 
         <motion.div
@@ -37,7 +40,7 @@ export default function Hero() {
         >
           <TypewriterComponent
             options={{
-              strings: ["AI Engineer", "Full Stack Dev", "Creator"],
+              strings: ["AI/ML Engineer", "Data Scientist", "Full Stack Dev", "AI Enthusiast"],
               autoStart: true,
               loop: true,
               wrapperClassName: "typewriter-wrapper",
@@ -52,12 +55,16 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          <Button className="glow" size="lg">
-            Explore Projects <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="lg">
-            Download Resume <Download className="ml-2 h-4 w-4" />
-          </Button>
+          <Link href="#projects">
+            <Button className="glow" size="lg">
+              Explore Projects <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+          <a href={resumeUrl} download="RajeevAken.pdf" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" size="lg">
+              Download Resume <Download className="ml-2 h-4 w-4" />
+            </Button>
+          </a>
         </motion.div>
 
         <motion.div

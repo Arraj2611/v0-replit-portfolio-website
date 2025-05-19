@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { ModeToggle } from "./mode-toggle"
-// Add import for ScrollProgress
 import ScrollProgress from "./scroll-progress"
 
 const navLinks = [
@@ -16,7 +15,6 @@ const navLinks = [
   { name: "Contact", href: "#contact" },
 ]
 
-// Add ScrollProgress to the navbar component
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)

@@ -8,10 +8,14 @@ import TiltEffect from "../animations/tilt-effect"
 export default function About() {
   const interests = [
     { name: "Football", icon: "⚽" },
+    { name: "Basketball", icon: "🏀" },
     { name: "Anime", icon: "📺" },
     { name: "Gaming", icon: "👾" },
-    { name: "AI Research", icon: "📊" },
+    { name: "Movies", icon: "🎬" },
   ]
+
+  // Using the raw GitHub URL for your profile photo
+  const profilePhotoUrl = "https://raw.githubusercontent.com/Arraj2611/v0-replit-portfolio-website/main/photo.png"
 
   return (
     <section id="about" className="py-20 bg-background">
@@ -35,18 +39,20 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg">
-              Hi there! I'm <span className="font-semibold">Rajeev Aken</span>, an AI/ML Engineer and Full Stack
-              Developer with a passion for building intelligent, creative systems that solve real-world problems.
+              Hi there! I'm <span className="font-semibold">Rajeev Aken</span>, an aspiring Software Engineer with
+              hands-on experience in backend development, API design, and building scalable data-driven applications.
             </p>
 
             <p className="text-lg">
-              My journey in tech began with a fascination for how AI could transform the way we interact with computers.
-              This led me to dive deep into machine learning, natural language processing, and web development.
+              I specialize in developing robust software solutions with a focus on AI/ML applications, data engineering,
+              and backend systems. My expertise includes designing efficient APIs, creating automated data pipelines,
+              and implementing machine learning models for real-world problems.
             </p>
 
             <p className="text-lg">
-              I believe in building technology that's not just powerful, but also accessible and ethical. When I'm not
-              coding, you can find me exploring new technologies, watching anime, or playing football.
+              I'm passionate about leveraging technology to create impactful solutions and continuously expanding my
+              skills in the ever-evolving tech landscape. When I'm not coding, you can find me playing football,
+              watching anime, or gaming.
             </p>
 
             <div className="pt-4">
@@ -70,11 +76,12 @@ export default function About() {
           >
             <TiltEffect className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden glow">
               <Image
-                src="/placeholder.svg?height=320&width=320"
+                src={profilePhotoUrl || "/placeholder.svg"}
                 alt="Rajeev Aken"
                 width={320}
                 height={320}
                 className="object-cover"
+                priority
               />
             </TiltEffect>
           </motion.div>
