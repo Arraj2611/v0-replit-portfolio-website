@@ -23,7 +23,7 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
       >
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-foreground"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
@@ -55,12 +55,12 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <Link href="#projects">
-            <Button className="glow w-full sm:w-auto" size="lg">
+            <Button className="glow w-full sm:w-auto text-primary-foreground" size="lg">
               Explore Projects <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
           <a href={resumeUrl} download="RajeevAken.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-            <Button variant="outline" size="lg" className="w-full">
+            <Button variant="outline" size="lg" className="w-full text-foreground">
               Download Resume <Download className="ml-2 h-4 w-4" />
             </Button>
           </a>
