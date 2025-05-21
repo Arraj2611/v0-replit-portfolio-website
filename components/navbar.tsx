@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ScrollProgress from "./scroll-progress"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -55,10 +56,12 @@ export default function Navbar() {
                     {link.name}
                   </Link>
                 ))}
+                <ThemeToggle />
               </div>
             </div>
 
             <div className="md:hidden flex items-center">
+              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="icon"

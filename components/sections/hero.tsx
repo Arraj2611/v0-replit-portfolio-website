@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="section-container z-10 text-center"
+        className="section-container z-10 text-center px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -32,7 +32,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.div
-          className="text-xl md:text-2xl lg:text-3xl mb-8 h-12 text-muted-foreground"
+          className="text-xl md:text-2xl lg:text-3xl mb-8 min-h-[3rem] md:min-h-[3.5rem] lg:min-h-[4rem] flex items-center justify-center text-muted-foreground"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
@@ -49,18 +49,18 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-8 items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           <Link href="#projects">
-            <Button className="glow" size="lg">
+            <Button className="glow w-full sm:w-auto" size="lg">
               Explore Projects <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-          <a href={resumeUrl} download="RajeevAken.pdf" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg">
+          <a href={resumeUrl} download="RajeevAken.pdf" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Button variant="outline" size="lg" className="w-full">
               Download Resume <Download className="ml-2 h-4 w-4" />
             </Button>
           </a>

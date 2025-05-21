@@ -67,14 +67,14 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center mt-8 md:mt-0"
           >
             <div className="relative group">
               {/* Outer glow effect - uses themed HSL variables */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-[hsl(var(--teal))] to-[hsl(var(--violet))] rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
 
               {/* Image container - bg-background ensures it matches theme */}
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-2 border-foreground/20 bg-background">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border-2 border-foreground/20 bg-background">
                 <img
                   src="/images/profile.png"
                   alt="Rajeev Aken"
@@ -92,7 +92,7 @@ export default function About() {
                             "bg-gradient-to-br", "from-primary/20", "to-primary/40" 
                         );
                         const initialsDiv = document.createElement("div");
-                        initialsDiv.className = "text-6xl font-bold text-primary-foreground"; // text-primary-foreground should be theme aware
+                        initialsDiv.className = "text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground";
                         initialsDiv.textContent = "RA";
                         parent.appendChild(initialsDiv);
                     }
