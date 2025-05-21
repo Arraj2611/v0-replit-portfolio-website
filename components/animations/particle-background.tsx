@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface Particle {
   x: number
@@ -15,10 +15,17 @@ export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particles = useRef<Particle[]>([])
   const animationFrameId = useRef<number>()
+  const [particleColor, setParticleColor] = useState("#ffffff")
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
+    const computedStyle = getComputedStyle(document.documentElement)
+    const colorFromCSS = computedStyle.getPropertyValue('--particle-color').trim()
+    if (colorFromCSS) {
+      setParticleColor(colorFromCSS.replace(/[\"\']/g, ''))
+    }
 
     const ctx = canvas.getContext("2d")
     if (!ctx) return
@@ -40,14 +47,9 @@ export default function ParticleBackground() {
           size: Math.random() * 2 + 0.5,
           speedX: (Math.random() - 0.5) * 0.5,
           speedY: (Math.random() - 0.5) * 0.5,
-          color: getRandomColor(),
+          color: particleColor,
         })
       }
-    }
-
-    const getRandomColor = () => {
-      const colors = ["#00f0ff", "#9d4edd", "#ffffff"]
-      return colors[Math.floor(Math.random() * colors.length)]
     }
 
     const drawParticles = () => {
@@ -57,7 +59,7 @@ export default function ParticleBackground() {
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
         ctx.fillStyle = particle.color
-        ctx.globalAlpha = 0.6
+        ctx.globalAlpha = 0.7
         ctx.fill()
 
         // Update position
@@ -91,8 +93,11 @@ export default function ParticleBackground() {
 
           if (distance < maxDistance) {
             ctx.beginPath()
-            ctx.strokeStyle = "#ffffff"
-            ctx.globalAlpha = 0.1 * (1 - distance / maxDistance)
+            const R = parseInt(particleColor.slice(1,3),16)
+            const G = parseInt(particleColor.slice(3,5),16)
+            const B = parseInt(particleColor.slice(5,7),16)
+            ctx.strokeStyle = `rgba(${R},${G},${B},0.3)`
+            ctx.globalAlpha = 0.3 * (1 - distance / maxDistance)
             ctx.lineWidth = 0.5
             ctx.moveTo(particles.current[i].x, particles.current[i].y)
             ctx.lineTo(particles.current[j].x, particles.current[j].y)
@@ -102,8 +107,10 @@ export default function ParticleBackground() {
       }
     }
 
-    resizeCanvas()
-    drawParticles()
+    if (particleColor !== "#ffffff") {
+      resizeCanvas()
+      drawParticles()
+    }
 
     window.addEventListener("resize", resizeCanvas)
 
@@ -113,7 +120,7 @@ export default function ParticleBackground() {
         cancelAnimationFrame(animationFrameId.current)
       }
     }
-  }, [])
+  }, [particleColor])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-40" />
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 opacity-70" />
 }

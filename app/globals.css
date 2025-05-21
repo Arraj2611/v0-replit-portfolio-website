@@ -23,7 +23,8 @@
     --secondary-foreground: 220 13% 20%;
     /* Darker Gray for text on secondary */
     --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted-foreground: 220 10% 35%;
+    /* Darkened muted foreground for light theme */
     /* Softer Gray for muted text */
     --accent: 217.2 91.2% 59.8%;
     /* Same as primary or a distinct accent color */
@@ -41,10 +42,10 @@
 
     /* Colors for neon effects - adjust for light theme visibility if needed */
     /* Keeping them vibrant as they define the neon look */
-    --teal: 160 100% 35%;
-    /* Darker Teal for better contrast on light bg */
-    --violet: 260 85% 60%;
-    /* Vibrant Violet */
+    --teal: 170 80% 40%;
+    /* Adjusted Teal for light theme - slightly brighter/more saturated */
+    --violet: 260 85% 55%;
+    /* Adjusted Violet for light theme - slightly lighter/brighter */
 
     /* Custom for portfolio */
     --nav-bg-light: 0 0% 100% / 0.8;
@@ -53,8 +54,8 @@
     /* White */
     --hero-gradient-to-light: 220 14.3% 95.9%;
     /* Light Gray */
-    --particle-color-light: "#60a5fa";
-    /* Light Blue for particles */
+    --particle-color-light: "#2563eb";
+    /* Darker, more vibrant blue for particles */
 
     /* Default to light theme variables if .dark is not present */
     --nav-bg: var(--nav-bg-light);
